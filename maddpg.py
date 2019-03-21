@@ -93,6 +93,7 @@ class MADDPGAgent(object):
             self.target_critic.load_state_dict(
                 torch.load('{}/checkpoint_critic_{}.pth'.format(
                     model_path, self.agent_index)))
+            print("Model checkpoint loaded!")
             if eval_mode:
                 self.actor_local.eval()
 
@@ -229,17 +230,15 @@ class MADDPGAgent(object):
 
     def checkpoint(self):
         """Checkpoint actor and critic models"""
-        if not os.path.exists('{}/multi'.format(self.dirname)):
-            os.makedirs('{}/multi'.format(self.dirname))
         torch.save(
             self.local_critic.state_dict(), 
-            '{}/multi/checkpoint_critic_{}.pth'.format(
+            '{}/checkpoint_critic_{}.pth'.format(
                 self.dirname, self.agent_index
             )
         ) 
         torch.save(
             self.local_actor.state_dict(), 
-            '{}/multi/checkpoint_actor_{}.pth'.format(
+            '{}/checkpoint_actor_{}.pth'.format(
                 self.dirname, self.agent_index
             )
         )
