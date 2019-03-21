@@ -66,7 +66,7 @@ def main():
     state_shape = state.shape[1]
     action_size = brain.vector_action_space_size
 
-    agent = MADDPGAgentTrainer(state_shape, action_size, num_agents, random_seed=8, dirname=None, 
+    agent = MADDPGAgentTrainer(state_shape, action_size, num_agents, random_seed=2, dirname=None, 
         model_path=args.checkpoint_path, eval_mode=True)
     play(env, brain_name, num_agents, agent, num_episodes=args.num_episodes)
 

@@ -40,7 +40,11 @@ The task is episodic, and in order to solve the environment, your agents must ge
 ## Instructions
 To train your model to solve the environment, simply run
 
-`python main.py`
+`python train.py`
+
+To play your model, simply run
+
+`python play.py --checkpoint_path='/../drlnd_collab-compet/' --num_episodes=5
 
 
 ## References
