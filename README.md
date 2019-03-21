@@ -44,7 +44,7 @@ To train your model to solve the environment, simply run
 
 To play your model, simply run
 
-`python play.py --checkpoint_path='/../drlnd_collab-compet/' --num_episodes=5
+`python play.py --checkpoint_path='/../drlnd_collab-compet/' --num_episodes=5`
 
 
 ## References
